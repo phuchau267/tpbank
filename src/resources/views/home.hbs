@@ -1,16 +1,18 @@
 <header>
     <div class="title-box">
-        
-        <h1>
+
+        <h1 id="main-title" class="main-title">
             <span>TPB-FICO</span>
         </h1>
-        <h2>VAY TÍN CHẤP TIÊU DÙNG, <br> KHÔNG LO LÃI SUẤT</h2>
+        <h2 id="small-title" class="small-title">VAY TÍN CHẤP TIÊU DÙNG, UY TÍN HÀNG ĐẦU <br> GIẢI NGÂN NHANH CHÓNG, LÃI SUẤT CHỈ TỪ 1.3% </h2>
+
+        <div class="header-btn-box">
+            <a id="sign-up-btn" href="#" class="sign-up-btn">TÌM HIỂU THÊM</a>
+            <a id="job-btn" href="#" class="job-btn">TUYỂN DỤNG</a>
+        </div>
         
-        
-        <a href="#" class="sign-up-btn">ĐĂNG KÝ VAY</a>
-        <a href="#" class="job-btn">TUYỂN DỤNG</a>
     </div>
- 
+
     <div class="scrolldown-box">
         <span>CUỘN XUỐNG</span>
         <div class='scrolldown'>
@@ -21,107 +23,293 @@
         </div>
     </div>
 
-    <form class="sign-up-box">
-        <div class="sign-up-title-box">
-            <div class="step-navigation">
-                <label class="step-navigation-button" for="">
-                    <input class="step-navigation-radio" type="radio">
+    <div class="sign-up-box">
+        <form action="">
+            
 
-                </label>
-                <b></b>
-                <label class="step-navigation-button" for="">
-                    <input class="step-navigation-radio" type="radio">
-                </label>
-                <b></b>
-                <label class="step-navigation-button" for="">
-                    <input class="step-navigation-radio" type="radio">
-                </label>
-            </div>
-            <h3>Đăng ký vay ngay chỉ với 3 bước dưới đây!</h3>
-        </div>
-        <div class="form-items">
-            <div class="form-item">
-                <p><span>Bước 1:</span>Đánh dấu vào những giấy tờ bạn có.</p>
-                <div>
-                    <div>
-                        <label class="checkbox">
-                            <input class="sign-up-checkbox" type="checkbox" name="" />
-                            <svg viewBox="0 0 21 18">
-                                <symbol id="tick-path" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.22003 7.26C5.72003 7.76 7.57 9.7 8.67 11.45C12.2 6.05 15.65 3.5 19.19 1.69" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
-                                </symbol>
-                                <defs>
-                                    <mask id="tick">
-                                        <use class="tick mask" href="#tick-path" />
-                                    </mask>
-                                </defs>
-                                <use class="tick" href="#tick-path" stroke="currentColor" />
-                                <path fill="white" mask="url(#tick)" d="M18 9C18 10.4464 17.9036 11.8929 17.7589 13.1464C17.5179 15.6054 15.6054 17.5179 13.1625 17.7589C11.8929 17.9036 10.4464 18 9 18C7.55357 18 6.10714 17.9036 4.85357 17.7589C2.39464 17.5179 0.498214 15.6054 0.241071 13.1464C0.0964286 11.8929 0 10.4464 0 9C0 7.55357 0.0964286 6.10714 0.241071 4.8375C0.498214 2.39464 2.39464 0.482143 4.85357 0.241071C6.10714 0.0964286 7.55357 0 9 0C10.4464 0 11.8929 0.0964286 13.1625 0.241071C15.6054 0.482143 17.5179 2.39464 17.7589 4.8375C17.9036 6.10714 18 7.55357 18 9Z" />
-                            </svg>
-                            <svg class="lines" viewBox="0 0 11 11">
-                                <path d="M5.88086 5.89441L9.53504 4.26746" />
-                                <path d="M5.5274 8.78838L9.45391 9.55161" />
-                                <path d="M3.49371 4.22065L5.55387 0.79198" />
-                            </svg>
-                        
-                        </label>
-                        <p>Sao kê lương + BHYT <span>HOẶC</span> xác nhận lương + BHYT</p>
+            <div class="form-items">
+
+                <p class="form-item-title">ĐĂNG KÝ VAY</p>
+
+                <div class="form-item-box">
+
+                    <div class="fill-info-box">
+                        <label for="">Họ và tên:</label>
+                        <input placeholder="VD: Nguyễn Văn A" type="text">
                     </div>
-                    
+
+
+                    <div class="fill-info-box">
+                        <label for="">Ngày tháng năm sinh:</label>
+                        <input placeholder="VD: Ngày/Tháng/Năm" type="text">
+                    </div>
+
+
+
+                    <div class="fill-info-box">
+                        <label for="">Số CMND hoặc CCCD:</label>
+                        <input placeholder="VD: 123456789" type="text">
+                    </div>
+
+                    <div class="fill-info-box">
+                        <label for="">Số điện thoại:</label>
+                        <input placeholder="VD: 123456789" type="text">
+                    </div>
+
+
+
+                    <div class="fill-info-box">
+                        <label for="">Email (không bắt buộc):</label>
+                        <input placeholder="VD: nguyenvana@gmail.com" type="text">
+                    </div>
+
+                    <div class="fill-info-box">
+                        <label for="">Địa chỉ sinh sống hiện tại:</label>
+                        <input placeholder="VD: 68 Nguyen Van Linh k6 p2 TPCT" type="text">
+                    </div>
+
+
+
                 </div>
+                <div class="sign-up-btn-box">
+                    
+                    <a href="#" class="sign-up-next-btn">Đăng ký</a>
+                </div>
+
+
             </div>
+        </form>
+
+
+    </div>
 
 
 
-            <div class="form-item">
-                <p><span>Bước 2:</span>Chọn số tiền bạn muốn vay</p>
-            </div>
 
-
-
-            <div class="form-item">
-                <p><span>Bước cuối:</span>Điền thông tin cần thiết để kết thúc quá trình <span>ĐĂNG KÝ VAY</span></p>
-            </div>
-        </div>
-    </form>
-    
-    
 </header>
 <section class="benefit-container">
-    <h2 class="benefit-title">VÌ SAO BẠN NÊN CHỌN TPB-FICO ĐỂ VAY?</h2>
-    <div class="benefit-box">
-        <div class="benefit">
-            
-                <img src="/img/timetable.png" alt="" srcset=""> 
-                <span>THỦ TỤC NHANH GỌN</span>
-            <p>Thủ tục, hồ sơ và quy trình đăng ký đơn giản, thời gian chỉ 1 – 3 ngày làm việc khách hàng được giải ngân, tạo điều kiện thuận lợi cho khách hàng.</p>
 
-            <i class="fal fa-fingerprint"></i>
+    <div class="benefit-title">
+            <div class="benefit-background-color"></div>
+
+
+            <div class="benefit-title-box">
+                <p class="benefit-title-text">VÌ SAO BẠN NÊN CHỌN <span>TPB-FICO</span> ĐỂ VAY?</p>
+                <div class="benefit-title-icon-box">
+                    <img class="mouse-img" src="/img/mouse.png" alt="">
+                    <p>Kéo từ phải qua</p>
+                    
+                    <img class="arrow-img" src="/img/left-arrow.png" alt="">
+                </div>
+
+            </div>
         </div>
-        <div class="benefit">
+    <div class="swiper  benefit-swiper">
+      <div class="swiper-wrapper  benefit-wrapper">
+        <div class="swiper-slide benefit-box">
+            <div class="benefit">
+                <img src="/img/timetable.png" alt="" srcset="">
+                <span>THỦ TỤC NHANH GỌN</span>
+                <p>Thủ tục, hồ sơ và quy trình đăng ký đơn giản, thời gian chỉ 1 – 3 ngày làm việc khách hàng được giải
+                    ngân, tạo điều kiện thuận lợi cho khách hàng.</p>
+
+                <i class="fal fa-fingerprint"></i>
+            </div>
             
-                <img src="/img/checklist.png" alt="" srcset=""> 
+        </div>
+        <div class="swiper-slide benefit-box">
+            <div class="benefit">
+                <img src="/img/checklist.png" alt="" srcset="">
                 <span>HỒ SƠ MINH BẠCH</span>
-              
-            <p>Kịp thời đưa ra các thông tin chi tiết về khoản vay và lãi suất cho khách hàng một cách chính xác nhất.</p>
-            <i class="fal fa-fingerprint"></i>
+
+                <p>Kịp thời đưa ra các thông tin chi tiết về khoản vay và lãi suất cho khách hàng một cách chính xác
+                    nhất.
+                </p>
+                <i class="fal fa-fingerprint"></i>
             </div>
-        <div class="benefit">
-           
-                <img src="/img/balance.png" alt="" srcset=""> 
-                <span>LÃI SUẤT CẠNH TRANH</span>
-       
-            <p>Mức lãi suất luôn luôn là hấp dẫn nhất thị trường cho từng phân khúc khách hàng.</p>
-            <i class="fal fa-fingerprint"></i>
-            </div>
-        <div class="benefit">
-           
-                <img src="/img/love.png" alt="" srcset=""> 
-                <span>NHÂN VIÊN TÂM HUYẾT</span>
-         
             
-            <p>Chăm sóc khách hàng 24/7, vui vẻ, nhiệt tình, đúng thời điểm và đúng nhu cầu.</p>
-            <i class="fal fa-fingerprint"></i>
+        </div>
+        <div class="swiper-slide benefit-box">
+            <div class="benefit">
+                <img src="/img/balance.png" alt="" srcset="">
+                <span>LÃI SUẤT CẠNH TRANH</span>
+
+                <p>Mức lãi suất luôn luôn là hấp dẫn nhất thị trường cho từng phân khúc khách hàng.</p>
+                <i class="fal fa-fingerprint"></i>
             </div>
+            
+        </div>
+        <div class="swiper-slide benefit">
+            <div>
+                
+            </div>
+            <img src="/img/love.png" alt="" srcset="">
+                <span>NHÂN VIÊN TÂM HUYẾT</span>
+
+
+                <p>Chăm sóc khách hàng 24/7, vui vẻ, nhiệt tình, đúng thời điểm và đúng nhu cầu.</p>
+                <i class="fal fa-fingerprint"></i></div>
+        
+      </div>
+      
+    </div>
+
+
+</section>
+<section class="product-container">
+    <h3 class="product-title">
+        SẢN PHẨM VAY
+    </h3>
+    <div class="product-box">
+        <a id="product-1" href="" class="product">
+            <img src="/img/payday.png" alt="">
+            <span>Vay Tín Chấp - Theo Lương</span>
+            <p>Khoản vay tối đa lên tới 100tr đồng, thời gian vay kéo dài từ 12-36 tháng, lãi suất chỉ từ 1.3%</p>
+        </a>
+        <a id="product-2" href="" class="product">
+            <img src="/img/health-insurance.png" alt="">
+            <span>Vay Tiêu Dùng Theo Bảo Hiểm Nhân Thọ</span>
+            <p>Khoản vay tối đa lên tới 70tr đồng, thời gian vay kéo dài từ 13-36 tháng, lãi suất chỉ từ 1.76%</p>
+        </a>
+        <a id="product-3" href="" class="product">
+            <img src="/img/contract.png" alt="">
+            <span>Vay Tiền Nhanh Theo Hợp Đồng Vay Cũ</span>
+            <p>Khoản vay tối đa lên tới 70tr đồng, thời gian vay kéo dài từ 13-36 tháng, lãi suất chỉ từ 2.17%</p>
+
+        </a>
+        <a id="product-4" href="" class="product">
+            <img src="/img/invoice.png" alt="">
+            <span>Vay Tiền Mặt Theo Hóa Đơn Điện/Nước/Wifi,...</span>
+            <p>Khoản vay tối đa lên tới 50tr đồng, thời gian vay kéo dài từ 12-36 tháng, lãi suất chỉ từ 2.17%</p>
+
+        </a>
+        <a id="product-5" href="" class="product">
+            <img src="/img/group.png" alt="">
+            <span>Vay Sinh Viên</span>
+            <p>Khoản vay tối đa lên tới 9tr đồng, thời gian vay kéo dài từ 3-12 tháng, lãi suất chỉ từ 1.8%</p>
+        </a>
+    </div>
+
+</section>
+<section class="testimonials-container">
+    <h3 class="testimonials-title">NHẬN XÉT CỦA KHÁCH HÀNG</h3>
+    <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper  testimonials-box">
+            <div class="swiper-slide testimonials-item">
+                
+                <p class="testimonials-item-quotes">
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
+                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
+                      minima repellat illum. "
+                </p>
+                <div class="testimonials-item-title">
+                    <span class="testimonials-item-name">
+                        Mr. Nguyen Thanh Dat -
+                    </span>
+                    <span class="testimonials-item-job">
+                         Khach hang than thiet
+                    </span>
+
+                </div>
+
+            </div>
+            <div class="swiper-slide testimonials-item">
+                
+                <p class="testimonials-item-quotes">
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
+                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
+                      minima repellat illum. "
+                </p>
+                <div class="testimonials-item-title">
+                    <span class="testimonials-item-name">
+                        Mr. Nguyen Thanh Dat -
+                    </span>
+                    <span class="testimonials-item-job">
+                         Khach hang than thiet
+                    </span>
+
+                </div>
+
+            </div>
+            <div class="swiper-slide testimonials-item">
+                
+                <p class="testimonials-item-quotes">
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
+                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
+                      minima repellat illum. "
+                </p>
+                <div class="testimonials-item-title">
+                    <span class="testimonials-item-name">
+                        Mr. Nguyen Thanh Dat -
+                    </span>
+                    <span class="testimonials-item-job">
+                         Khach hang than thiet
+                    </span>
+
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="swiper-button-next testimonials-next-btn"></div>
+        <div class="swiper-button-prev testimonials-prev-btn"></div>
+        <div class="swiper-pagination testimonials-pagination"></div>
     </div>
 </section>
+    <div id="sign-up-hidden" class="sign-up-hidden">
+    <form action="">
+            
+            <div class="form-items">
+
+                <p class="form-item-title">ĐĂNG KÝ VAY</p>
+
+                <div class="form-item-box">
+
+                    <div class="fill-info-box">
+                        <label for="">Họ và tên:</label>
+                        <input placeholder="VD: Nguyễn Văn A" type="text">
+                    </div>
+
+
+                    <div class="fill-info-box">
+                        <label for="">Ngày tháng năm sinh:</label>
+                        <input placeholder="VD: Ngày/Tháng/Năm" type="text">
+                    </div>
+
+
+
+                    <div class="fill-info-box">
+                        <label for="">Số CMND hoặc CCCD:</label>
+                        <input placeholder="VD: 123456789" type="text">
+                    </div>
+
+                    <div class="fill-info-box">
+                        <label for="">Số điện thoại:</label>
+                        <input placeholder="VD: 123456789" type="text">
+                    </div>
+
+
+
+                    <div class="fill-info-box">
+                        <label for="">Email (không bắt buộc):</label>
+                        <input placeholder="VD: nguyenvana@gmail.com" type="text">
+                    </div>
+
+                    <div class="fill-info-box">
+                        <label for="">Địa chỉ sinh sống hiện tại:</label>
+                        <input placeholder="VD: 68 Nguyen Van Linh k6 p2 TPCT" type="text">
+                    </div>
+
+
+
+                </div>
+                <div class="sign-up-btn-box">
+                    
+                    <a href="#" class="sign-up-next-btn">Đăng ký</a>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+

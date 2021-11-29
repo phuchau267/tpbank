@@ -4,5 +4,11 @@ class CommentController {
         
         res.render('home')
     }
+    recruitmentPage(req, res, next){
+        
+        res.render('recruitment',{
+            layout: 'recruitment-layout.hbs'
+        })
+    }
 }
 module.exports = new CommentController();

@@ -4,5 +4,6 @@ const SiteController = require('../app/controller/SiteController')
 
 
 router.get('/',SiteController.homePage);
+router.get('/recruitment',SiteController.recruitmentPage);
 
 module.exports = router;
