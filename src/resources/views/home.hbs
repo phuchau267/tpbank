@@ -2,15 +2,17 @@
     <div class="title-box">
 
         <h1 id="main-title" class="main-title">
-            <span>TPB-FICO</span>
+            TPB-FICO
         </h1>
-        <h2 id="small-title" class="small-title">VAY TÍN CHẤP TIÊU DÙNG, UY TÍN HÀNG ĐẦU <br> GIẢI NGÂN NHANH CHÓNG, LÃI SUẤT CHỈ TỪ 1.3% </h2>
+        <h2 id="small-title" class="small-title">VAY TÍN CHẤP TIÊU DÙNG, UY TÍN HÀNG ĐẦU <br> GIẢI NGÂN NHANH CHÓNG, LÃI
+            SUẤT CHỈ TỪ 1.3% </h2>
 
         <div class="header-btn-box">
-            <a id="sign-up-btn" href="#" class="sign-up-btn">TÌM HIỂU THÊM</a>
-            <a id="job-btn" href="#" class="job-btn">TUYỂN DỤNG</a>
+            <a id="" href="javascript:void(0);" class="sign-up-btn product-btn">TÌM HIỂU THÊM</a>
+            <a id="sign-up-btn" href="javascript:void(0);" class="small-sign-up-btn showSignUpBtn">ĐĂNG KÝ VAY</a>
+            <a id="job-btn" href="/recruitment" class="job-btn">TUYỂN DỤNG</a>
         </div>
-        
+
     </div>
 
     <div class="scrolldown-box">
@@ -24,61 +26,70 @@
     </div>
 
     <div class="sign-up-box">
-        <form action="">
-            
+        <div >
 
-            <div class="form-items">
+
+            <form class="form-items" action="/client-sign-up" method="POST">
 
                 <p class="form-item-title">ĐĂNG KÝ VAY</p>
-
+                <p style="color:red">*Mọi thông tin chỉ để phục vụ cho việc vay vốn</p>
                 <div class="form-item-box">
 
                     <div class="fill-info-box">
                         <label for="">Họ và tên:</label>
-                        <input placeholder="VD: Nguyễn Văn A" type="text">
+                        <input name="name" placeholder="VD: Nguyễn Văn A" type="text" required>
                     </div>
 
 
-                    <div class="fill-info-box">
-                        <label for="">Ngày tháng năm sinh:</label>
-                        <input placeholder="VD: Ngày/Tháng/Năm" type="text">
+                    <div class="fill-info-box birthday-box">
+                        <div class="birthDay">
+                            <label for="">Ngày sinh:</label>
+                            <input name="birthDay" placeholder="VD: 30" type="text" required>
+                        </div>
+                        
+                        <div class="birthMonth">
+                            <label for="">Tháng sinh:</label>
+                            <input name="birthMonth" placeholder="VD: 12" type="text" required>
+                        </div>
+                        <div class="birthYear">
+                            <label for="">Năm sinh:</label>
+                            <input name="birthYear" placeholder="VD: 1998" type="text" required>
+                        </div>
                     </div>
+                    
 
 
 
                     <div class="fill-info-box">
                         <label for="">Số CMND hoặc CCCD:</label>
-                        <input placeholder="VD: 123456789" type="text">
+                        <input name="cmnd" placeholder="VD: 123456789" type="text" required>
                     </div>
 
                     <div class="fill-info-box">
                         <label for="">Số điện thoại:</label>
-                        <input placeholder="VD: 123456789" type="text">
+                        <input name="phone" placeholder="VD: 123456789" type="text" required>
                     </div>
 
 
 
                     <div class="fill-info-box">
                         <label for="">Email (không bắt buộc):</label>
-                        <input placeholder="VD: nguyenvana@gmail.com" type="text">
+                        <input name="email" placeholder="VD: nguyenvana@gmail.com" type="text">
                     </div>
 
                     <div class="fill-info-box">
                         <label for="">Địa chỉ sinh sống hiện tại:</label>
-                        <input placeholder="VD: 68 Nguyen Van Linh k6 p2 TPCT" type="text">
+                        <input name="address" placeholder="VD: 135 Trần Hưng Đạo Phường An Phú Quận Ninh Kiều TP Cần Thơ" type="text" required>
                     </div>
 
 
 
                 </div>
-                <div class="sign-up-btn-box">
-                    
-                    <a href="#" class="sign-up-next-btn">Đăng ký</a>
-                </div>
+                
 
-
-            </div>
-        </form>
+                <button id="header-signup-form-submit-btn" class=" sign-up-next-btn">Đăng ký</button>
+            </form>
+        </div>
 
 
     </div>
@@ -90,68 +101,69 @@
 <section class="benefit-container">
 
     <div class="benefit-title">
-            <div class="benefit-background-color"></div>
+        <div class="benefit-background-color"></div>
 
 
-            <div class="benefit-title-box">
-                <p class="benefit-title-text">VÌ SAO BẠN NÊN CHỌN <span>TPB-FICO</span> ĐỂ VAY?</p>
-                <div class="benefit-title-icon-box">
-                    <img class="mouse-img" src="/img/mouse.png" alt="">
-                    <p>Kéo từ phải qua</p>
-                    
-                    <img class="arrow-img" src="/img/left-arrow.png" alt="">
+        <div class="benefit-title-box">
+            <p class="benefit-title-text">VÌ SAO BẠN NÊN CHỌN <span>TPB-FICO</span> ĐỂ VAY?</p>
+            <div class="benefit-title-icon-box">
+                <img class="mouse-img" src="/img/mouse.png" alt="icon chuột">
+                <img class="finger-img" src="/img/flick-to-left.png" alt="icon lướt qua trái">
+                <p>Kéo từ phải qua</p>
+
+                <img class="arrow-img" src="/img/left-arrow.png" alt="icon mũi tên qua trái">
+            </div>
+
+        </div>
+    </div>
+    <div class="swiper  benefit-swiper">
+        <div class="swiper-wrapper  benefit-wrapper">
+            <div class="swiper-slide benefit-box">
+                <div class="benefit">
+                    <img src="/img/timetable.png" alt="hình đồng hồ" srcset="">
+                    <span>THỦ TỤC NHANH GỌN</span>
+                    <p>Thủ tục, hồ sơ và quy trình đăng ký đơn giản, khách hàng sẽ được giải ngân chỉ sau 1 – 3 ngày làm việc.</p>
+
+                    <i class="fal fa-fingerprint"></i>
                 </div>
 
             </div>
-        </div>
-    <div class="swiper  benefit-swiper">
-      <div class="swiper-wrapper  benefit-wrapper">
-        <div class="swiper-slide benefit-box">
-            <div class="benefit">
-                <img src="/img/timetable.png" alt="" srcset="">
-                <span>THỦ TỤC NHANH GỌN</span>
-                <p>Thủ tục, hồ sơ và quy trình đăng ký đơn giản, thời gian chỉ 1 – 3 ngày làm việc khách hàng được giải
-                    ngân, tạo điều kiện thuận lợi cho khách hàng.</p>
+            <div class="swiper-slide benefit-box">
+                <div class="benefit">
+                    <img src="/img/checklist.png" alt="hình hồ sơ" srcset="">
+                    <span>HỒ SƠ MINH BẠCH</span>
 
-                <i class="fal fa-fingerprint"></i>
+                    <p>Kịp thời đưa ra các thông tin chi tiết về khoản vay và lãi suất cho khách hàng một cách chính xác
+                        nhất.
+                    </p>
+                    <i class="fal fa-fingerprint"></i>
+                </div>
+
             </div>
-            
-        </div>
-        <div class="swiper-slide benefit-box">
-            <div class="benefit">
-                <img src="/img/checklist.png" alt="" srcset="">
-                <span>HỒ SƠ MINH BẠCH</span>
+            <div class="swiper-slide benefit-box">
+                <div class="benefit">
+                    <img src="/img/balance.png" alt="hình cán cân" srcset="">
+                    <span>LÃI SUẤT CẠNH TRANH</span>
 
-                <p>Kịp thời đưa ra các thông tin chi tiết về khoản vay và lãi suất cho khách hàng một cách chính xác
-                    nhất.
-                </p>
-                <i class="fal fa-fingerprint"></i>
+                    <p>Mức lãi suất luôn luôn là hấp dẫn nhất thị trường cho từng phân khúc khách hàng.</p>
+                    <i class="fal fa-fingerprint"></i>
+                </div>
+
             </div>
-            
-        </div>
-        <div class="swiper-slide benefit-box">
-            <div class="benefit">
-                <img src="/img/balance.png" alt="" srcset="">
-                <span>LÃI SUẤT CẠNH TRANH</span>
+            <div class="swiper-slide benefit-box">
+                <div class="benefit">
+                    <img src="/img/love.png" alt="hình trái tim" srcset="">
+                    <span>NHÂN VIÊN TÂM HUYẾT</span>
 
-                <p>Mức lãi suất luôn luôn là hấp dẫn nhất thị trường cho từng phân khúc khách hàng.</p>
-                <i class="fal fa-fingerprint"></i>
+
+                    <p>Chăm sóc khách hàng 24/7, vui vẻ, nhiệt tình, đúng thời điểm và đúng nhu cầu.</p>
+                    <i class="fal fa-fingerprint"></i>
+                </div>
             </div>
-            
+
+
         </div>
-        <div class="swiper-slide benefit">
-            <div>
-                
-            </div>
-            <img src="/img/love.png" alt="" srcset="">
-                <span>NHÂN VIÊN TÂM HUYẾT</span>
 
-
-                <p>Chăm sóc khách hàng 24/7, vui vẻ, nhiệt tình, đúng thời điểm và đúng nhu cầu.</p>
-                <i class="fal fa-fingerprint"></i></div>
-        
-      </div>
-      
     </div>
 
 
@@ -161,30 +173,30 @@
         SẢN PHẨM VAY
     </h3>
     <div class="product-box">
-        <a id="product-1" href="" class="product">
-            <img src="/img/payday.png" alt="">
-            <span>Vay Tín Chấp - Theo Lương</span>
+        <a id="product-1" href="javascript:void(0);" class="product showSignUpBtn">
+            <img src="/img/payday.png" alt="hình tiền lương">
+            <span>Vay Theo Lương</span>
             <p>Khoản vay tối đa lên tới 100tr đồng, thời gian vay kéo dài từ 12-36 tháng, lãi suất chỉ từ 1.3%</p>
         </a>
-        <a id="product-2" href="" class="product">
-            <img src="/img/health-insurance.png" alt="">
+        <a id="product-2" href="javascript:void(0);" class="product showSignUpBtn">
+            <img src="/img/health-insurance.png" alt="hình bảo hiểm">
             <span>Vay Tiêu Dùng Theo Bảo Hiểm Nhân Thọ</span>
             <p>Khoản vay tối đa lên tới 70tr đồng, thời gian vay kéo dài từ 13-36 tháng, lãi suất chỉ từ 1.76%</p>
         </a>
-        <a id="product-3" href="" class="product">
-            <img src="/img/contract.png" alt="">
+        <a id="product-3" href="javascript:void(0);" class="product showSignUpBtn">
+            <img src="/img/contract.png" alt="hình hợp đồng">
             <span>Vay Tiền Nhanh Theo Hợp Đồng Vay Cũ</span>
             <p>Khoản vay tối đa lên tới 70tr đồng, thời gian vay kéo dài từ 13-36 tháng, lãi suất chỉ từ 2.17%</p>
 
         </a>
-        <a id="product-4" href="" class="product">
-            <img src="/img/invoice.png" alt="">
+        <a id="product-4" href="javascript:void(0);" class="product showSignUpBtn">
+            <img src="/img/invoice.png" alt="hình hóa đơn">
             <span>Vay Tiền Mặt Theo Hóa Đơn Điện/Nước/Wifi,...</span>
             <p>Khoản vay tối đa lên tới 50tr đồng, thời gian vay kéo dài từ 12-36 tháng, lãi suất chỉ từ 2.17%</p>
 
         </a>
-        <a id="product-5" href="" class="product">
-            <img src="/img/group.png" alt="">
+        <a id="product-5" href="javascript:void(0);" class="product showSignUpBtn">
+            <img src="/img/group.png" alt="hình nhóm sinh viên">
             <span>Vay Sinh Viên</span>
             <p>Khoản vay tối đa lên tới 9tr đồng, thời gian vay kéo dài từ 3-12 tháng, lãi suất chỉ từ 1.8%</p>
         </a>
@@ -196,120 +208,144 @@
     <div class="swiper testimonials-swiper">
         <div class="swiper-wrapper  testimonials-box">
             <div class="swiper-slide testimonials-item">
-                
+
                 <p class="testimonials-item-quotes">
-                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
-                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
-                      minima repellat illum. "
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium
+                    praesentium saepe,
+                    mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum
+                    deleniti quos quaerat
+                    minima repellat illum. "
                 </p>
                 <div class="testimonials-item-title">
                     <span class="testimonials-item-name">
                         Mr. Nguyen Thanh Dat -
                     </span>
                     <span class="testimonials-item-job">
-                         Khach hang than thiet
+                        Khach hang than thiet
                     </span>
 
                 </div>
 
             </div>
             <div class="swiper-slide testimonials-item">
-                
+
                 <p class="testimonials-item-quotes">
-                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
-                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
-                      minima repellat illum. "
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium
+                    praesentium saepe,
+                    mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum
+                    deleniti quos quaerat
+                    minima repellat illum. "
                 </p>
                 <div class="testimonials-item-title">
                     <span class="testimonials-item-name">
                         Mr. Nguyen Thanh Dat -
                     </span>
                     <span class="testimonials-item-job">
-                         Khach hang than thiet
+                        Khach hang than thiet
                     </span>
 
                 </div>
 
             </div>
             <div class="swiper-slide testimonials-item">
-                
+
                 <p class="testimonials-item-quotes">
-                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium praesentium saepe,
-                     mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum deleniti quos quaerat
-                      minima repellat illum. "
+                    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptatem vel, laudantium
+                    praesentium saepe,
+                    mollitia molestiae recusandae tempora pariatur commodi quisquam consequuntur dignissimos harum
+                    deleniti quos quaerat
+                    minima repellat illum. "
                 </p>
                 <div class="testimonials-item-title">
                     <span class="testimonials-item-name">
                         Mr. Nguyen Thanh Dat -
                     </span>
                     <span class="testimonials-item-job">
-                         Khach hang than thiet
+                        Khach hang than thiet
                     </span>
 
                 </div>
 
             </div>
-            
+
         </div>
         <div class="swiper-button-next testimonials-next-btn"></div>
         <div class="swiper-button-prev testimonials-prev-btn"></div>
         <div class="swiper-pagination testimonials-pagination"></div>
     </div>
 </section>
-    <div id="sign-up-hidden" class="sign-up-hidden">
-    <form action="">
-            
-            <div class="form-items">
+<div id="sign-up-hidden" class="sign-up-hidden">
+    
+   <div class="main-hidden-form-item">
 
+
+            <form class="form-items" action="/client-sign-up" method="POST">
+                <a href="javascript:void(0);" id="hide-sign-up-btn" class="hide-sign-up-btn"><i class="fal fa-times"></i></a>
                 <p class="form-item-title">ĐĂNG KÝ VAY</p>
-
+                <p style="color:red">*Mọi thông tin chỉ để phục vụ cho việc vay vốn</p>
                 <div class="form-item-box">
 
                     <div class="fill-info-box">
                         <label for="">Họ và tên:</label>
-                        <input placeholder="VD: Nguyễn Văn A" type="text">
+                        <input name="name" placeholder="VD: Nguyễn Văn A" type="text" class="input-keyup2" required>
                     </div>
 
 
-                    <div class="fill-info-box">
-                        <label for="">Ngày tháng năm sinh:</label>
-                        <input placeholder="VD: Ngày/Tháng/Năm" type="text">
+                    <div class="fill-info-box birthday-box">
+                        <div class="birthDay">
+                            <label for="">Ngày sinh:</label>
+                            <input name="birthDay" placeholder="VD: 30" type="text" class="input-keyup2-2" required>
+                        </div>
+                        
+                        <div class="birthMonth">
+                            <label for="">Tháng sinh:</label>
+                            <input name="birthMonth" placeholder="VD: 12" type="text" class="input-keyup2-3" required>
+                        </div>
+                        <div class="birthYear">
+                            <label for="">Năm sinh:</label>
+                            <input name="birthYear" placeholder="VD: 1998" type="text" class="input-keyup2-4" required>
+                        </div>
                     </div>
+                    
 
 
 
                     <div class="fill-info-box">
                         <label for="">Số CMND hoặc CCCD:</label>
-                        <input placeholder="VD: 123456789" type="text">
+                        <input name="cmnd" placeholder="VD: 123456789" type="text" class="input-keyup2-5" required>
                     </div>
 
                     <div class="fill-info-box">
                         <label for="">Số điện thoại:</label>
-                        <input placeholder="VD: 123456789" type="text">
+                        <input name="phone" placeholder="VD: 123456789" type="text" class="input-keyup2-6"required>
                     </div>
 
 
 
                     <div class="fill-info-box">
                         <label for="">Email (không bắt buộc):</label>
-                        <input placeholder="VD: nguyenvana@gmail.com" type="text">
+                        <input name="email" placeholder="VD: nguyenvana@gmail.com" type="text">
                     </div>
 
                     <div class="fill-info-box">
                         <label for="">Địa chỉ sinh sống hiện tại:</label>
-                        <input placeholder="VD: 68 Nguyen Van Linh k6 p2 TPCT" type="text">
+                        <input name="address" placeholder="VD: 135 Trần Hưng Đạo Phường An Phú Quận Ninh Kiều TP Cần Thơ" type="text" class="input-keyup2-7" required>
                     </div>
 
 
 
                 </div>
-                <div class="sign-up-btn-box">
-                    
-                    <a href="#" class="sign-up-next-btn">Đăng ký</a>
-                </div>
+                
+                <button class="sign-up-next-btn">Đăng ký</button>
 
+            </form>
+        </div>
+</div>
 
-            </div>
-        </form>
+<div id="success-sign-up-hidden-container" class="success-sign-up-hidden-container">
+    <div class="success-sign-up-hidden-modal">
+        <p>Gửi thông tin thành công<br>
+            cám ơn vì đã chọn chúng tôi
+        </p>
     </div>
-
+</div>

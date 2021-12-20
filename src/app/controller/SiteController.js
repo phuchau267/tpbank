@@ -1,8 +1,10 @@
-const { mutipleMongooseToObject , mongooseToObject } = require('../../util/mongoose');
-class CommentController {
+const meta = require('../../config/config')
+class SiteController {
     homePage(req, res, next){
         
-        res.render('home')
+        res.render('home',{
+            meta
+        })
     }
     recruitmentPage(req, res, next){
         
@@ -11,4 +13,4 @@ class CommentController {
         })
     }
 }
-module.exports = new CommentController();
+module.exports = new SiteController();

@@ -1,15 +1,16 @@
 @mixin respond ($breakpoint){
     @if $breakpoint== phone {
-        @media(max-width: 600px){@content};
+        @media(max-width: 500px){@content};
     }
-    @if $breakpoint== tablet {
+    @if $breakpoint== tabport {
         @media(max-width: 768px){@content};
     }
-    @if $breakpoint== laptop {
+    @if $breakpoint== tablet {
         @media(max-width: 1024px){@content};
     }
-    @if $breakpoint== pc {
-        @media(min-width: 1280px){@content};
+    @if $breakpoint== laptop {
+        @media(max-width: 1440px){@content};
     }
+    
 
 }

@@ -1,9 +1,11 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
-
+const passport      = require('passport');
+const session = require('express-session')
 const app = express();
 const port = 3000;
 
@@ -19,6 +21,11 @@ app.use(
         extended: true,
     }),
 );
+app.use(session({
+    secret:process.env.SESSION_SECRET,
+    resave:false,
+    saveUninitialized:false
+}))
 app.use(express.json());
 app.use(methodOverride('_method'));
 
@@ -26,8 +33,10 @@ app.use(methodOverride('_method'));
 // http logger
 app.use(morgan('combined'));
 
-
-
+//passport
+require('./util/passport')(passport)
+app.use(passport.initialize());
+app.use(passport.session());
 // express-session
 
 

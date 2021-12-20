@@ -1,0 +1,22 @@
+<nav class="header-bar">
+    <div class="nav-icon-box">
+        <span class="nav-icon"></span>
+                <span class="nav-icon"></span>
+                <span class="nav-icon"></span>
+                <span class="nav-icon"></span>
+    </div>
+    <div class="side-menu">
+        <a href="/"><i class="far fa-home-lg-alt"></i> Trang chủ</a>
+        <a href="/user/client"><i class="fal fa-user-alt"></i> Danh sách khách hàng</a>
+        <a href="/user/client/done"><i class="fal fa-user-check"></i> Đã giải ngân</a>
+        {{#ifCond role '==' 'admin'}}
+        <a href="/user/member"><i class="fal fa-users-cog"></i> Danh sách nhân viên</a>
+        <a href="/user/client/deleteRequest"><i class="fal fa-user-slash"></i> Danh sách cần xóa</a>
+        <a href="/user/recruitment"><i class="fal fa-user-plus"></i> Danh sách tuyển dụng</a>
+        
+
+        {{/ifCond}}
+        <a href="/user/logout"><i class="fal fa-door-open"></i> Đăng xuất</a>
+    </div>
+    <h3>{{userName}}</h3>
+</nav>

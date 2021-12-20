@@ -8,11 +8,32 @@
     transition: all 1s;
     transform: translateY(10rem);
     opacity: 0;
+    border-top: 1px solid #ffa622;
+    @include respond(laptop){
+        margin:   0 .5rem;
+
+        
+    }
+    @include respond(tablet){
+        margin:  1rem auto;
+
+        width: 20rem;
+    }
+    
+    @include respond(phone){
+        margin:  1rem auto;
+
+        width: 15rem;
+    }
+    
     &-title{
         font-size: 2rem;
         font-weight: 400;
         color: rgba(0, 0, 0, 0.616);
         margin-bottom: 5rem;
+        @include respond(laptop){
+            font-size: 1.5rem;
+        }
     }
     
     &:nth-child(1){
@@ -55,6 +76,21 @@
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
         'product-1 product-2 product-3 product-4 product-5 ';
+        
+        @include respond(laptop){
+            padding: 0;
+            
+        }
+        @include respond(tablet){
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+        @include respond(tabport){
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+        }
     }
     &-container{
         width: 100%;

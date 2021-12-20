@@ -1,4 +1,43 @@
+.success-sign-up-hidden{
+
+
+  &-container{
+    display: none;
+      position: fixed;
+      
+      transform: translate(-50%,-50%);
+      background-color: #00000042;
+      width: 100vw;
+      height: 100vh;
+  }
+  &-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+.hide-sign-up-btn{
+  position: absolute;
+  top: 0%;
+  left: 3%;
+  font-size: 2rem;
+  color: black;
+  z-index: 80;
+}
+.disabled-btn{
+  opacity: .5 ;
+  pointer-events: none ;
+}
+.main-hidden-form-item{
+  position: fixed;
+  top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+}
+
 .sign-up{
+
     &-btn-box{
       position: absolute;
       bottom: 10%;
@@ -7,7 +46,7 @@
 
     }
     &-show{
-      z-index: 99!important;
+      z-index: 50!important;
       opacity: 1 !important;
       
       
@@ -22,6 +61,29 @@
       background-color: #00000042;
       width: 100vw;
       height: 100vh;
+      @include respond(phone){
+        & .form-items{
+          height: 20rem;
+          overflow-y: scroll;
+          
+        }
+        & .form-item-box{
+          
+            display: grid;
+            grid-template-areas:
+            'fill-info-box-1'
+            'fill-info-box-2'
+            'fill-info-box-3'
+            'fill-info-box-4'
+            'fill-info-box-5'
+            'fill-info-box-6';
+          
+          
+        }
+        & .sign-up-btn-box{
+          bottom: -75%;
+        }
+      }
       
       & > form{
         position: fixed;
@@ -35,9 +97,11 @@
     &-next-btn{
       background-color: #ee9e0a;
       border-radius: 4px;
+      border: none;
       border-bottom: 3px solid #795006;
       padding: .7rem 2rem;
       color: black;
+      
     }
     &-box{
       
@@ -48,6 +112,9 @@
       
       
       animation: sign-up-fade-in 1.5s;
+      @include respond(laptop){
+        display: none;
+      }
     }
     &-title-box{
       
@@ -89,9 +156,9 @@
       text-align: center;
       display: grid;
       grid-template-areas:
-      '.fill-info-box-1 .fill-info-box-2'
-      '.fill-info-box-3 .fill-info-box-4'
-      '.fill-info-box-5 .fill-info-box-6';
+      'fill-info-box-1 fill-info-box-2'
+      'fill-info-box-3 fill-info-box-4'
+      'fill-info-box-5 fill-info-box-6';
       
     }
     &-title{
@@ -105,10 +172,32 @@
         margin: 1rem 0;
     }
 }
-
+.birthday-box{
+  display: grid !important;
+  & label{
+    font-size: .8rem !important;
+  }
+  & input{
+    width: 3.5rem !important;
+  }
+  grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+      'birthDay birthMonth birthYear';
+  .birthDay{
+    grid-area: birthDay;
+  }
+  .birthMonth{
+    grid-area: birthMonth;
+  }
+  .birthYear{
+    grid-area: birthYear;
+  }
+}
 .fill-info-box{
   margin: 1rem .5rem;
-  
+  @include respond(phone){
+    margin:.5rem;
+  }
   text-align: left;
   &:nth-child(1){
     grid-area: fill-info-box-1;
@@ -134,6 +223,14 @@
     grid-area: fill-info-box-6;
     display: inline-block;
   }
+  &:nth-child(7){
+    grid-area: fill-info-box-7;
+    display: inline-block;
+  }
+  &:nth-child(8){
+    grid-area: fill-info-box-8;
+    display: inline-block;
+  }
   & label{
     
     font-size: .9rem;
@@ -145,11 +242,11 @@
     padding:.7rem .5rem;
     display: block;
     border: none;
-    background: #dadada;
-    box-shadow: 0px 5px 10px 1px #0000004d;
+    background-color: #e2e2e2;
+    
     transition: all .2s;
     &:focus{
-      box-shadow: 0px 3px 5px 1px #0000004d;
+      box-shadow: 0px 1px 3px 1px #0000002f;
       outline: none;
     }
   }

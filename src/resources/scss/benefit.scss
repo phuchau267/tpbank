@@ -8,9 +8,19 @@
     border-radius: .3rem;
     background-color: white;
     height: 30rem;
+    
     z-index: 1;
     cursor: pointer;
-    margin:0 2rem;
+    
+    position: relative;
+    @include respond(tablet){
+        height: 25rem;
+    }
+    
+    
+    
+    
+    
     &::after{
         width: 100%;
         display: block;
@@ -46,31 +56,56 @@
         }
     }
     &-box{
-       
-    }
-    @include respond (phone){
+        width: 20%;
+        @include respond(laptop){
+            width: 30%;
+            
+        }
         
-        
+        @include respond(tabport){
+            width: 40%;
+            
+        }
+        @include respond(phone){
+            width: 80%;
+            height: 25rem;
+        }
     }
+    
     &:active{
         cursor: grabbing;
     }
     
     & > img{
-        width: 7rem;
+        width: 6rem;
         margin: 1rem 0;
+        
+        @include respond(phone){
+            width: 5rem;
+        }
+        
     }
    
     & > span{
         padding-top: 1rem;
         display: block;
         font-weight: 500;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         transition: all .3s;
         color: #631dad;
+        @include respond(laptop){
+            font-size: 1.5rem;
+            margin: 0 1rem;
+        }
+        @include respond(tablet){
+            font-size: 1.4rem;
+            margin: 0 1rem;
+        }
+        
+        
     }
     & > i{
-        font-size: 5rem;
+        font-size: 4rem;
         position: absolute;
         top: 70%;
         left: 50%;
@@ -80,14 +115,20 @@
     }
     
     & > p{
-        padding-top: 1rem;
+        padding: 1rem 0;
         font-weight: 200;
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         word-spacing: .4rem;
         transition: all .3s;
-        
+        margin: 0 1rem;
         opacity: 0;
+        @include respond(tablet){
+            font-size: 1.2rem;
+            
+        }
+        
+        
     }
     
     
@@ -101,17 +142,34 @@
             transform: translate(0, -50%);
             text-align: left;
             color: rgba(0, 0, 0, 0.452);
+            @include respond (laptop){
+                font-size: 2.5rem;
+            }
+            @include respond (tablet){
+                top: 0%; 
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3rem;
+                width: 70%;
+                margin: 0 auto;
+            }
             @include respond (phone){
                 top: 0; 
+                left: 50%;
+                transform: translate(-50%, -50%);
                 font-size: 2rem;
                 width: 90%;
+                margin: 0 auto;
             }
+            
             & > p > span{
                 font-size: 4rem;
                 color: #ff9900;
-                @include respond (phone){
+                @include respond (laptop){
                     font-size: 3rem;
                 }
+                
+                
             }
             
         }
@@ -130,6 +188,21 @@
                 opacity: .5;
                 width: 2.5rem;
                 animation: mouse-shake 2s infinite ;
+                
+                @include respond(tablet){
+                    display: none;
+                }
+            }
+            & > .finger-img{
+                margin: 0 auto;
+                display: none;
+                opacity: .5;
+                width: 2.5rem;
+                animation: mouse-shake 2s infinite ;
+                
+                @include respond(tablet){
+                    display: block;
+                }
             }
             & > .arrow-img{
                 
@@ -147,10 +220,14 @@
             left: 0%;
             transform: translate(0%,-50%);
             width: 100%;
-            height: 60%;
+            height: 80%;
             z-index: -1;
             background-color: #f7f7f7;
-            @include respond (phone){
+            
+            @include respond (laptop){
+                height: 70%;
+            }
+            @include respond (tablet){
                 top: 0;
             }
         }
@@ -158,21 +235,46 @@
     }
     
     &-container{
+        position: relative;
         
-        
-        margin: 5rem auto;
+        margin: 10rem auto;
         transition: all 1s;
         transform: translateY(20rem);
         opacity: 0;
+        @include respond (laptop){
+            margin-top: 20rem;
+        }
+        
+        @include respond (tabport){
+            margin-top: 15rem;
+        }
+        @include respond (phone){
+            margin-top: 10rem;
+            transform: translateY(10rem);
+        }
+        
     }
     &-wrapper{
         
         align-items: center;
-        @include respond (phone){
-           padding-top: 10rem;
+       
+        @include respond (tablet){
+           padding-top: 9rem;
         }
         
         
+        
+    }
+    &-swiper{
+        padding-left: 5rem;
+        @include respond (laptop){
+            padding-left: 15rem;
+        }
+        @include respond (tablet){
+            padding-left: 0rem;
+        }
+        
+       
     }
 
 }

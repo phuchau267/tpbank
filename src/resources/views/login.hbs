@@ -1,0 +1,19 @@
+<form class="login-form" action="/user/login" method="post">
+    <h3 class="login-title">Đăng Nhập</h3>
+
+    {{#ifCond wrongUsername '==' true}}
+        <p class="wrong-login">Tài khoản này không tồn tại</p>
+    {{/ifCond}}
+
+    {{#ifCond wrongPassword '==' true}}
+        <p class="wrong-login">Mật khẩu sai</p>
+    {{/ifCond}}
+   
+    <div class="login-fields">
+        
+        <input class="login-input" id="username" name="username" type="text" placeholder="Tên đăng nhập" {{#ifCond resendLogin '==' true}} value="{{../username}}" {{/ifCond}} required>
+        
+        <input class="login-input" id="password" name="password" type="password" placeholder="Mật khẩu" {{#ifCond resendLogin '==' true}} value="{{../password}}" {{/ifCond}} required>
+    </div>
+    <button class="login-submit">ĐĂNG NHẬP</button>
+</form>

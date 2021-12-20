@@ -1,0 +1,153 @@
+
+
+<form id="handleForm" action="/user/client/handleform" method="post" class="main-container">
+    <div class="main-container-header">
+        
+        <h3>Danh Sách Khách Hàng {{#ifCond doned '==' 'true'}}Đã Giải Ngân{{/ifCond}}{{#ifCond deleteRequest '==' 'true'}}Cần Xóa{{/ifCond}}</h3>
+        <div class="select-all-box">
+            <select name="action" id="action-select">
+                <option value="">Chọn hành động</option>
+                <option value="delete-client-option">Xóa khách hàng</option>
+                
+                {{#ifCond doned '==' 'false'}}
+                {{#ifCond ../role '==' "admin"}}
+                {{#ifCond ../deleteRequest '==' 'false'}}
+                <option value="send-client-option">Gửi khách hàng</option>
+                {{/ifCond}}
+                {{/ifCond}}
+                {{/ifCond}}
+           
+            </select>
+            <select name="member" id="member-select">
+                <option value="">Chọn nhân viên</option>
+                {{#each user}}
+                <option value="{{this._id}}">{{this.username}}</option>
+                {{/each}}
+                
+            </select>
+            <input id="select-all-checkbox" value="" type="checkbox">
+            <label class="select-all-label" for="select-all-checkbox">Chọn tất cả</label>
+            
+            <a href="javascript:void(0);" class="disable-btn activate-delete-btn" id="open-delete-modal-btn">Xóa</a>
+           
+            <a href="javascript:void(0);" class="disable-btn activate-something-btn" id="open-send-modal-btn">Gửi</a>
+            
+        </div>
+        
+    </div>
+    
+{{#if client}}
+    <table>
+    <tr>
+        <th></th>
+        <th>Họ và tên</th>
+        <th>Ngày tháng năm sinh</th>
+        <th>CMND / CCCD</th>
+        <th>SĐT</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        {{#ifCond doned '==' 'true'}}
+        <th>Sản phẩm</th>
+        <th>Tiền vay</th>
+        {{/ifCond}}
+        {{#ifCond role '==' 'admin'}}
+        <th>Quản lý bởi</th>
+        {{/ifCond}}
+    </tr>
+
+    {{#each client}}
+    <tr id="tr{{this._id}}" class="select-all">
+        <td><input type="checkbox" class="check-box-add-class"  name="clientIds[]" id="{{this._id}}" value="{{this._id}}"></td>
+        <td>{{this.name}}</td>
+        <td>{{this.birthDay}}/{{this.birthMonth}}/{{this.birthYear}}</td>
+        <td>{{this.cmnd}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.address}}</td>
+        {{#ifCond ../doned '==' 'true'}}
+        <td>{{../this.product}}</td>
+        <td>{{../this.money}}</td>
+        {{/ifCond}}
+        {{#ifCond ../role '==' 'admin'}}
+        <td>{{../this.user}}</td>
+        {{/ifCond}}
+        
+        <td><a href="javascript:void(0);" class="delete-btn activate-delete-btn"  id="a{{this._id}}">Xóa</a></td>
+        {{#ifCond ../deleteRequest '==' 'false'}}
+        {{#ifCond ../../doned '!=' 'true'}}
+        <td><a href="javascript:void(0);" class="disbursed-btn activate-disburse-btn" id="b{{../this._id}}">Giải ngân</a></td>
+        {{/ifCond}}
+        {{/ifCond}}
+    </tr>
+    
+    {{/each}}
+    
+    </table>
+{{else}}
+    <p>ko co khach hang</p>
+{{/if}}
+</form>
+
+<form id="hidden-delete-client-form" method="post" style="visibility: none;"></form>
+
+
+
+
+<div id="hidden-form" class="hidden-form">
+    <div>
+        <h3>Xóa Khách Hàng</h3>
+        <p>Bạn có chắc muốn xóa khách hàng này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" id="accept-delete-client">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+<div id="hidden-delete-many-form" class="hidden-form">
+    <div>
+        <h3>Xóa Khách Hàng</h3>
+        <p>Bạn có chắc muốn xóa những khách hàng này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);"  class="accept-submit-form">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+<div id="hidden-send-many-form" class="hidden-form">
+    <div>
+        <h3>Gửi Khách Hàng</h3>
+        <p>Bạn có chắc muốn gửi những khách hàng này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" class="accept-submit-form">Gửi</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+<div id="hidden-disbursed-form" class="hidden-disbursed-form">
+    <form id="disbursed-form" action="" method="post">
+        <h3>Thông Tin Giải Ngân</h3>
+        <select name="product" id="product-select">
+            <option value="">Chọn sản phẩm</option>
+            <option value="salary">Lương</option>
+            <option value="insurance">Bảo hiểm</option>
+            <option value="contract">Hợp đồng vay cũ</option>
+            <option value="electric">Hóa đơn tiện ích</option>
+            <option value="student">Sinh viên</option>
+        </select>
+        <input name="money" type="text" placeholder="Số tiền">
+        <div class="hidden-disbursed-form-btn-box">
+            <a href="javascript:void(0);" id="submit-disburse-form">Xong</a>
+            <a href="javascript:void(0);" id="hide-disburse-form">Hủy</a>
+        </div>
+    </form>
+</div>

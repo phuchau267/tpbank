@@ -1,0 +1,76 @@
+
+<form id="memberHandleForm" method="post" action="/user/member/handleform" class="main-container">
+    <div class="main-container-header">
+        
+        <h3>Danh Sách Nhân Viên</h3>
+        <a id="add-member-btn" class="add-member-btn  activate-something-btn" href="javascript:void(0);">Thêm Nhân Viên</a>
+        <div class="select-all-box">
+            <input  id="select-all-checkbox" value="" type="checkbox">
+            <label class="select-all-label" for="select-all-checkbox">Chọn tất cả</label>
+            
+            <a href="javascript:void(0);" class="disable-btn activate-something-btn" id="open-delete-many-member-btn">Xóa</a>
+        </div>
+        
+    </div>
+
+    <table>
+    <tr>
+        <th></th>
+        <th>Họ và tên</th>
+        
+        <th>Số lượng khách hàng</th>
+
+    </tr>
+    {{#each user}}
+    <tr id="tr{{this._id}}"  class="select-all">
+        <td><input type="checkbox" class="check-box-add-class" name="memberIds[]" id="{{this._id}}" value="{{this._id}}"></td>
+        <td>{{this.username}}</td>
+        <td>{{this.client.length}}</td>
+        <td><a href="javascript:void(0);" class="delete-btn activate-delete-btn" id="a{{this._id}}">Xóa</a></td>
+        
+    </tr>
+    {{/each}}
+    
+    </table>
+</form>
+
+<form id="hidden-delete-member-form" method="post" style="visibility: none;"></form>
+
+<div id="hidden-add-form" class="hidden-add-form">
+    <form action="/user/member/add" method="post">
+        <h3>Thêm nhân viên</h3>
+        <input name="username" type="text" placeholder="Tên đăng nhập">
+        <input name="password" type="password" placeholder="Mật khẩu">
+        <div class="hidden-add-form-btn-box">
+            <button >Thêm</button>
+            <a href="javascript:void(0);" id="hide-add-form">Hủy</a>
+        </div>
+        
+        
+    </form>
+</div>
+<div id="hidden-form" class="hidden-form">
+    <div>
+        <h3>Xóa Nhân Viên</h3>
+        <p>Bạn có chắc muốn xóa nhân viên này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" id="accept-delete-member">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+<div id="hidden-delete-many-member-form" class="hidden-form">
+    <div>
+        <h3>Xóa Nhân Viên</h3>
+        <p>Bạn có chắc muốn xóa những nhân viên này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" id="accept-delete-many-member">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>

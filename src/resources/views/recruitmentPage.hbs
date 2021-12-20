@@ -1,0 +1,87 @@
+
+<form id="handleForm" action="/user/recruitment/handleform" method="post" class="main-container">
+    <div class="main-container-header">
+        
+        <h3>Danh Sách Tuyển Dụng</h3>
+        <div class="select-all-box">
+            <select name="action" id="action-select">
+                <option value="">Chọn hành động</option>
+                <option value="delete-recruitment-option">Xóa Đơn</option>
+            </select>
+            <input id="select-all-checkbox" value="" type="checkbox">
+            <label class="select-all-label" for="select-all-checkbox">Chọn tất cả</label>
+            
+            <a href="javascript:void(0);" class="disable-btn activate-delete-btn" id="open-delete-modal-btn">Xóa</a>
+        </div>
+        
+    </div>
+    
+{{#if recruitment}}
+    <table>
+    <tr>
+        <th></th>
+        <th>Họ và tên</th>
+        <th>Năm sinh</th>
+        <th>CMND / CCCD</th>
+        <th>SĐT</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Trình độ học vấn</th>
+        <th>Kinh nghiệm</th>
+    </tr>
+
+    {{#each recruitment}}
+    <tr id="tr{{this._id}}" class="select-all">
+        <td><input type="checkbox" class="check-box-add-class"  name="recruitmentIds[]" id="{{this._id}}" value="{{this._id}}"></td>
+        <td>{{this.name}}</td>
+        <td>{{this.yearborn}}</td>
+        <td>{{this.cmnd}}</td>
+        <td>{{this.phone}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.address}}</td>
+        <td>{{this.level}}</td>
+        <td>{{this.exp}}</td>
+        
+        <td><a href="javascript:void(0);" class="delete-btn activate-delete-btn" id="a{{this._id}}">Xóa</a></td>
+    </tr>
+    
+    {{/each}}
+    
+    </table>
+{{else}}
+    <p>Không có dữ liệu</p>
+{{/if}}
+</form>
+
+<form id="hidden-delete-recruitment-form" method="post" style="visibility: none;"></form>
+
+
+
+
+<div id="hidden-form" class="hidden-form">
+    <div>
+        <h3>Xóa Đơn Tuyển Dụng</h3>
+        <p>Bạn có chắc muốn xóa đơn tuyển dụng này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" id="accept-delete-recruitment">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+<div id="hidden-delete-many-form" class="hidden-form">
+    <div>
+        <h3>Xóa Đơn Tuyển Dụng</h3>
+        <p>Bạn có chắc muốn xóa những đơn tuyển dụng này?</p>
+        <div class="hidden-form-btn-box">
+            <a href="javascript:void(0);" id="accept-submit-form"  class="accept-submit-form">Xóa</a>
+            <a href="javascript:void(0);" class="hide-form">Hủy</a>
+        </div>
+        
+        
+    </div>
+</div>
+
