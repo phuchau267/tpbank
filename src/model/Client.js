@@ -17,7 +17,8 @@ const Client = new Schema({
   product:{ type: String,default:'0' },
   money:{ type: String,default:'0' },
   user:{type: String,default:'khong co'},
-  deleteRequest:{type:Boolean,default:false}
+  deleteRequest:{type:Boolean,default:false},
+  testchange:{type:Boolean,default:true}
 }, {
   timestamps: true
 });
