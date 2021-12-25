@@ -9,7 +9,8 @@ class SiteController {
     recruitmentPage(req, res, next){
         
         res.render('recruitment',{
-            layout: 'recruitment-layout.hbs'
+            layout: 'recruitment-layout.hbs',
+            meta
         })
     }
 }

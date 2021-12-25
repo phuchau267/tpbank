@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 const path = require('path');
 const express = require('express');
@@ -7,7 +8,7 @@ const handlebars = require('express-handlebars');
 const passport      = require('passport');
 const session = require('express-session')
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const route = require('./routes');
 const db = require('./config/db');
@@ -23,8 +24,13 @@ app.use(
 );
 app.use(session({
     secret:process.env.SESSION_SECRET,
-    resave:false,
-    saveUninitialized:false
+    cookie:{
+        secure:false,
+        resave:false,
+        saveUninitialized:false,
+        maxAge:1000*3600*24
+    }
+    
 }))
 app.use(express.json());
 app.use(methodOverride('_method'));

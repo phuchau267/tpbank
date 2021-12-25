@@ -582,10 +582,12 @@ header {
     justify-content: center; }
     .pc-nav-middle a {
       color: #000000;
-      font-size: 1rem; }
+      font-size: 1rem;
+      transition: all .2s;
+      padding: .7rem 1rem; }
+      .pc-nav-middle a:hover {
+        background-color: rgba(255, 255, 255, 0.096); }
     .pc-nav-middle a:nth-child(2) {
-      padding: 0 1rem;
-      margin: 0 1rem;
       border-left: 1px solid black;
       border-right: 1px solid black; }
   .pc-nav-right {
@@ -688,13 +690,15 @@ header {
   align-items: center;
   background-color: #450B7C; }
   .small-nav-menu-link {
-    transition: all .2s;
+    transition: margin-left .2s, opacity .2s;
     opacity: 0;
     padding: 1rem 0;
     margin-left: 1rem;
     display: block;
     width: 100%;
     color: white; }
+    .small-nav-menu-link:hover {
+      background-color: rgba(255, 255, 255, 0.096); }
     .small-nav-menu-link:nth-child(1) {
       transition-delay: .2s; }
     .small-nav-menu-link:nth-child(2) {

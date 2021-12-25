@@ -375,11 +375,13 @@ header{
 
         color: #000000;
         font-size: 1rem;
-        
+        transition: all .2s;
+        padding: .7rem 1rem;
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.096);
+        }
       }
       & a:nth-child(2){
-        padding: 0 1rem;
-        margin: 0 1rem;
         border-left: 1px solid black;
         border-right: 1px solid black;
 
@@ -485,6 +487,7 @@ header{
     &-link{
       opacity: 1;
       margin-left: 0;
+      
     }
     &-bottom{
       opacity: 1;
@@ -506,7 +509,7 @@ header{
   align-items: center;
   background-color: #450B7C;
   &-link{
-    transition: all .2s;
+    transition: margin-left .2s, opacity .2s;
     
     opacity: 0;
     padding: 1rem 0;
@@ -514,14 +517,18 @@ header{
     display: block;
     width: 100%;
     color: rgb(255, 255, 255);
+    
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.096);
+      }
     &:nth-child(1){
-      transition-delay: .2s;
+      transition-delay:.2s;
     }
     &:nth-child(2){
-      transition-delay: .4s;
+      transition-delay:.4s;
     }
     &:nth-child(3){
-      transition-delay: .6s;
+      transition-delay:.6s;
     }
     
   }

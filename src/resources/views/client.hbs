@@ -50,8 +50,10 @@
         <th>Sản phẩm</th>
         <th>Tiền vay</th>
         {{/ifCond}}
-        {{#ifCond role '==' 'admin'}}
+        {{#ifCond deleteRequest '==' 'false'}}
+        {{#ifCond ../role '==' 'admin'}}
         <th>Quản lý bởi</th>
+        {{/ifCond}}
         {{/ifCond}}
     </tr>
 
@@ -68,8 +70,10 @@
         <td>{{../this.product}}</td>
         <td>{{../this.money}}</td>
         {{/ifCond}}
-        {{#ifCond ../role '==' 'admin'}}
+        {{#ifCond ../deleteRequest '==' 'false'}}
+        {{#ifCond ../../role '==' 'admin'}}
         <td>{{../this.user}}</td>
+        {{/ifCond}}
         {{/ifCond}}
         
         <td><a href="javascript:void(0);" class="delete-btn activate-delete-btn"  id="a{{this._id}}">Xóa</a></td>

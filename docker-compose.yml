@@ -1,0 +1,19 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - SESSION_SECRET=asdasasdasasdasd
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    ports:
+      - 27018:27017
+    volumes:
+      - data:/data/db
+volumes:
+  data:
