@@ -18,6 +18,8 @@ router.post('/login',UserController.checkWrongLogin,passport.authenticate('local
     failureRedirect: '/user/login'
 }));
 
+router.get('/client/potential',UserController.checkAuthenticate,ClientController.clientPotentialPage);
+router.post('/client/potential/:id',UserController.checkAuthenticate,ClientController.clientPotential);
 router.post('/client/disbursed/:id',UserController.checkAuthenticate,ClientController.clientDisbursed);
 router.post('/client/handleform',UserController.checkAuthenticate,ClientController.clientHandle);
 router.get('/client',UserController.checkAuthenticate,ClientController.clientPage);

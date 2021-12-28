@@ -101,6 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
            
             $('.hidden-disbursed-form').hide();
         }
+        if ($('.hidden-potential-form').is(e.target)) 
+        {
+           
+            $('.hidden-potential-form').hide();
+        }
 
     })
     const hiddenDeleteClientForm = $('#hidden-delete-client-form')
@@ -145,6 +150,19 @@ document.addEventListener("DOMContentLoaded", function () {
             $('#disbursed-form').attr('action',  `/user/client/disbursed/${id}`);
             
             $('#disbursed-form').submit()
+        })
+    })
+
+    $('.potential-btn').click((e)=>{ 
+        let rawid = e.target.id.split('');
+        
+        let id = rawid.slice(1).join('');
+        console.log(id)
+        $('.hidden-potential-form').show()
+        $('#submit-potential-form').click(()=>{
+            $('#potential-form').attr('action',  `/user/client/potential/${id}`);
+            
+            $('#potential-form').submit()
         })
     })
 

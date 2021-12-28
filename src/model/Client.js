@@ -18,7 +18,11 @@ const Client = new Schema({
   money:{ type: String,default:'0' },
   user:{type: String,default:'khong co'},
   deleteRequest:{type:Boolean,default:false},
-
+  fromUser: { type: String,default:'khong co' },
+  potential:{type:Boolean,default:false},
+  job: { type: String,default:'khong co' },
+  salary: { type: String,default:'khong co' },
+  dayforwork: { type: String,default:'khong co' },
 }, {
   timestamps: true
 });

@@ -1007,7 +1007,7 @@ header {
       overflow-y: scroll; }
     .sign-up-hidden .form-item-box {
       display: grid;
-      grid-template-areas: 'fill-info-box-1' 'fill-info-box-2' 'fill-info-box-3' 'fill-info-box-4' 'fill-info-box-5' 'fill-info-box-6'; }
+      grid-template-areas: 'fill-info-box-1' 'fill-info-box-2' 'fill-info-box-3' 'fill-info-box-4' 'fill-info-box-5' 'fill-info-box-6' 'fill-info-box-7'; }
     .sign-up-hidden .sign-up-btn-box {
       bottom: -75%; } }
   .sign-up-hidden > form {
@@ -1048,7 +1048,7 @@ header {
   margin-top: 1rem;
   position: relative;
   background-color: #f7f7f7;
-  height: 27rem;
+  height: 32rem;
   border-radius: .3rem;
   text-align: center;
   width: fit-content; }
@@ -1063,7 +1063,7 @@ header {
   .form-item-box {
     text-align: center;
     display: grid;
-    grid-template-areas: 'fill-info-box-1 fill-info-box-2' 'fill-info-box-3 fill-info-box-4' 'fill-info-box-5 fill-info-box-6'; }
+    grid-template-areas: 'fill-info-box-1 fill-info-box-2' 'fill-info-box-3 fill-info-box-4' 'fill-info-box-5 fill-info-box-6' 'fill-info-box-7 fill-info-box-7'; }
   .form-item-title {
     margin-bottom: 1rem;
     padding: 0 2rem;
@@ -1114,9 +1114,6 @@ header {
     display: inline-block; }
   .fill-info-box:nth-child(7) {
     grid-area: fill-info-box-7;
-    display: inline-block; }
-  .fill-info-box:nth-child(8) {
-    grid-area: fill-info-box-8;
     display: inline-block; }
   .fill-info-box label {
     font-size: .9rem; }

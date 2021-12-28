@@ -17,8 +17,10 @@ class ClientController {
                 phone: req.body.phone,
                 email: req.body.email,
                 address: req.body.address,
-                
+                fromUser:req.body.fromUser
+
             })
+
             client.save()
             
             .then(()=>{
@@ -76,7 +78,7 @@ class ClientController {
         if(req.user.role == 'admin'){
             Promise.all([
             
-                Client.find({status:false,deleteRequest:false}).lean()
+                Client.find({status:false,deleteRequest:false,potential:false}).lean()
                 .then(),
                 User.find({role:'user'}).lean()
                 .select('username _id')
@@ -89,9 +91,8 @@ class ClientController {
                 res.render('client',{
                     layout: 'user-layout.hbs',
                     client,
-                    doned: 'false',
                     user,
-                    deleteRequest:'false',
+                    clientPage:'true',
                     role:req.user.role,
                     userName:req.user.username
                 })
@@ -102,21 +103,20 @@ class ClientController {
                 .select('client -_id')
                 .populate({
                     path:'client',
-                    match: {status: false},
+                    match: {status: false,potential:false},
                     sort:{updatedAt:-1}
                 })
-            .then(client => {
-               
-                res.render('client',{
-                    layout: 'user-layout.hbs',
-                    client:client.client,
-                    doned: 'false',
-                    deleteRequest:'false',
-                    role:req.user.role,
-                    userName:req.user.username
-                })
+                .then(client => {
                 
-            })
+                    res.render('client',{
+                        layout: 'user-layout.hbs',
+                        client:client.client,
+                        clientPage:'true',
+                        role:req.user.role,
+                        userName:req.user.username
+                    })
+                    
+                })
         }
         
         
@@ -132,7 +132,7 @@ class ClientController {
                     layout: 'user-layout.hbs',
                     doned:'true',
                     client,
-                    deleteRequest:'false',
+                    
                     role:req.user.role,
                     userName:req.user.username
                 })
@@ -151,7 +151,7 @@ class ClientController {
                     layout: 'user-layout.hbs',
                     client:client.client,
                     doned:'true',
-                    deleteRequest:'false',
+                    
                     role:req.user.role,
                     userName:req.user.username
                 })
@@ -168,11 +168,11 @@ class ClientController {
             Promise.all([
                 Client.deleteOne({_id:req.params.id})
                 .then(),
-                User.updateMany({client:req.params.id},{$pull:{client: req.params.id }})
+                User.updateOne({client:req.params.id},{$pull:{client: req.params.id }})
                 .then()
             ])
             .then(()=>{
-                res.redirect('/user/client')
+                res.redirect('back')
             })
             
         }else{
@@ -184,7 +184,7 @@ class ClientController {
             ])
             
             .then(()=>{
-                res.redirect('/user/client')
+                res.redirect('back')
             })
         }
         
@@ -208,7 +208,7 @@ class ClientController {
                     
                  
                     .then(()=>{
-                        res.redirect('/user/client')
+                        res.redirect('back')
                     })
                   
                     
@@ -221,7 +221,7 @@ class ClientController {
                         .then()
                     })])
                     .then(()=>{
-                        res.redirect('/user/client')
+                        res.redirect('back')
                     })
                     
                     
@@ -233,7 +233,8 @@ class ClientController {
                 Promise.all([clientIds.forEach(clientId => {
                     User.updateOne({client:clientId},{ $pull: { client: clientId  }})
                     .then(),
-
+                    Client.updateOne({_id:clientId},{deleteRequest:false,potential:false,status:false, })
+                    .then(),
                     User.updateOne({ _id: req.body.member},{ $addToSet: { client: clientId  }})
                     .then(),
 
@@ -244,7 +245,7 @@ class ClientController {
                     })
                     
                 })])
-                .then(()=>res.redirect('/user/client'))
+                .then(()=>res.redirect('back'))
                 .catch(next);
                 break;
 
@@ -263,16 +264,65 @@ class ClientController {
         if(product == 'student'){productName = 'Sinh Viên'}
         let money = req.body.money
         Client.updateOne({_id:req.params.id},{status: true,product:productName,money:money})
-        .then(()=>res.redirect('/user/client'))
+        .then(()=>res.redirect('back'))
         .catch(next);
     }
+    clientPotential(req, res, next){
+        
+        Client.updateOne({_id:req.params.id},{potential: true,job:req.body.job,salary:req.body.salary,dayforwork:req.body.dayforwork})
+        .then(()=>res.redirect('back'))
+        .catch(next);
+    }
+    clientPotentialPage(req, res, next){
+        if(req.user.role == 'admin'){
+            Client.find({potential:true,status:false}).lean()
+            .then(client => {
+                    
+                res.render('client',{
+                    layout: 'user-layout.hbs',
+                    client,
+                    potential:'true',
+                    
+                    role:req.user.role,
+                    userName:req.user.username
+                })
+                
+            })
+        }else{
+            User.findOne({_id:req.user._id}).lean()
+            .populate({
+                path:'client',
+                match: {potential: true,status:false},
+                sort:{updatedAt:-1}
+            })
+            .then(client => {
+                    
+                res.render('client',{
+                    layout: 'user-layout.hbs',
+                    client:client.client,
+                    potential:'true',
+                    
+                    role:req.user.role,
+                    userName:req.user.username
+                })
+                
+            })
+        }
+        
+    }
     deleteRequest(req, res, next){
-        Client.find({deleteRequest:true}).lean()
-        .then(client => {
+        Promise.all([
+            Client.find({deleteRequest:true}).lean()
+            .then(),
+            User.find({role:'user'}).lean()
+                .select('username _id')
+        ])
+        .then(([client,user]) => {
                 
             res.render('client',{
                 layout: 'user-layout.hbs',
                 client,
+                user,
                 deleteRequest:'true',
                 role:req.user.role,
                 userName:req.user.username

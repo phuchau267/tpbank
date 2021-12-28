@@ -7,11 +7,12 @@
     </div>
     <div class="side-menu">
         <a href="/"><i class="far fa-home-lg-alt"></i> Trang chủ</a>
-        <a href="/user/client"><i class="fal fa-user-alt"></i> Danh sách khách hàng</a>
-        <a href="/user/client/done"><i class="fal fa-user-check"></i> Đã giải ngân</a>
+        <a href="/user/client"><i class="fal fa-user-alt"></i> KH Chưa Giải Quyết</a>
+        <a href="/user/client/done"><i class="fal fa-user-check"></i> KH Đã Giải Ngân</a>
+        <a href="/user/client/potential"><i class="fal fa-user-clock"></i> KH Tiềm Năng</a>
         {{#ifCond role '==' 'admin'}}
-        <a href="/user/member"><i class="fal fa-users-cog"></i> Danh sách nhân viên</a>
-        <a href="/user/client/deleteRequest"><i class="fal fa-user-slash"></i> Danh sách cần xóa</a>
+        <a href="/user/member"><i class="fal fa-users-cog"></i> Nhân Viên</a>
+        <a href="/user/client/deleteRequest"><i class="fal fa-user-slash"></i> KH Nhân Viên Xóa</a>
         <a href="/user/recruitment"><i class="fal fa-user-plus"></i> Danh sách tuyển dụng</a>
         
 
