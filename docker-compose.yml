@@ -1,9 +1,19 @@
 version: '3'
 services:
+  nginx:
+    image: nginx:stable-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./etc/nginx/default.conf:/etc/nginx/sites-available/default
+    depends_on:
+      - node-app
   node-app:
     build: .
     ports:
-      - 80:3000
+      - 3000:3000
     environment:
       - PORT=3000
       - SESSION_SECRET=asdasasdasasdasd
