@@ -3,9 +3,9 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - 443:443
+      - 80:80
     volumes:
-      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./etc/nginx/conf.d:/etc/nginx/sites-enabled/default
     depends_on:
       - node-app
   node-app:
