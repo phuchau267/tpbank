@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./etc/nginx/conf.d:/etc/nginx/sites-enabled/default
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - node-app
   node-app:
