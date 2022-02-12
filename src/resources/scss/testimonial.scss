@@ -1,10 +1,21 @@
 .testimonials{
     &-title{
-        font-size: 2rem;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.616);
-        margin-bottom: 2rem;
-        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5rem;
+        & span{
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0000009d;
+            margin: 0 2rem;
+        }
+        & b{
+            height: 1px;
+            background-color: #0000003f;
+            width: 20%;
+            display: block;
+        }
         @include respond(laptop){
             font-size: 1.5rem;
         }
@@ -12,7 +23,9 @@
     }
     &-container{
         text-align: center;
-        
+        transform: translateY(7rem);
+        opacity: 0;
+        transition: all 1s;
     }
     &-swiper{
         background-color: #f7f7f7;
@@ -49,6 +62,15 @@
                 font-size: .8rem;
             }
             
+        }
+        &-image{
+            border-radius: 50%;
+            width: 100px; /* width of container */
+            height: 100px; /* height of container */
+            object-fit: cover;
+            margin: 1rem auto;
+            display: block;
+
         }
         &-title{
             

@@ -1,22 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    $(window).scroll(function() {    
-        var scroll = $(window).scrollTop();
     
-         //>=, not <=
-        if (scroll > 0) {
-           
-            //clearHeader, not clearheader - caps H
-            
-            $(".pc-nav").addClass("smaller-padding");
-            $(".small-nav").addClass("smaller-padding");
-        }else {
-           
-            $(".pc-nav").removeClass("smaller-padding");
-            $(".small-nav").removeClass("smaller-padding");
-        }
-    }); //missing );
     var swiper = new Swiper(".benefit-swiper", {
         slidesPerView: 'auto',
         spaceBetween: 10,
@@ -86,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
       const productContainer = $('.product-container')
       const benefitContainer = $('.benefit-container')
+      const newsContainer = $('.news-container')
+      const testimonialsContainer = $('.testimonials-container')
     
       $(window).on('scroll', check_if_in_view);
         function check_if_in_view() {
@@ -129,6 +116,34 @@ document.addEventListener("DOMContentLoaded", function () {
                         product4.removeClass('fade-from-bottom')
                         product5.removeClass('fade-from-bottom')
                 }
+
+                var $element3 = newsContainer;
+                var element_height = $element3.outerHeight();
+                var element_top_position = $element3.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
+            
+                //check to see if this current container is within viewport
+                if ((element_bottom_position >= window_top_position) &&
+                    (element_top_position <= window_bottom_position)) {
+                      $element3.addClass('fade-from-bottom');
+                    } else {
+                      $element3.removeClass('fade-from-bottom');
+                    }
+
+
+
+                var $element4 = testimonialsContainer;
+                var element_height = $element4.outerHeight();
+                var element_top_position = $element4.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
+            
+                //check to see if this current container is within viewport
+                if ((element_bottom_position >= window_top_position) &&
+                    (element_top_position <= window_bottom_position)) {
+                      $element4.addClass('fade-from-bottom');
+                    } else {
+                      $element4.removeClass('fade-from-bottom');
+                    }
         }
         
         $('.product-btn').click(()=>{
